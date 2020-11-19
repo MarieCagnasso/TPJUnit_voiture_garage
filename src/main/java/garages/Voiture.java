@@ -72,12 +72,12 @@ public class Voiture {
 	 * @return vrai si la voiture est dans un garage, faux sinon
 	 */
 	public boolean estDansUnGarage() {
-		for(Stationnement s : this.myStationnements ){
-			if (s.estEnCours()){
-				return true;
-			}
+
+		boolean res = false;
+		if (!myStationnements.isEmpty()){
+			res = myStationnements.get(myStationnements.size()-1).estEnCours();
 		}
-		return false;
+		return res;
 	}
 
 	/**
